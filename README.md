@@ -5,6 +5,7 @@ visual studio code snippets
 C:\Users\{USER}\Documents\{Visual Studio 2022}\Code Snippets\Visual C#\My Code Snippets
 
 #Example
+```
 <?xml version="1.0" encoding="utf-8"?>
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
@@ -21,3 +22,4 @@ C:\Users\{USER}\Documents\{Visual Studio 2022}\Code Snippets\Visual C#\My Code S
 		</Snippet>
 	</CodeSnippet>
 </CodeSnippets>
+```
