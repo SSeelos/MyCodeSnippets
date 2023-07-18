@@ -2,9 +2,10 @@
 visual studio code snippets
 
 # Location
+```
 C:\Users\{USER}\Documents\{Visual Studio 2022}\Code Snippets\Visual C#\My Code Snippets
-
-#Example
+```
+# Example
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
