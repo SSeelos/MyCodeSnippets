@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>DtO</Title>
+			<Author>SSeelos</Author>
+			<Description>Data Transfer Object</Description>
+			<Shortcut>#dto</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+public interface I$dtoName$DtO : I$dtoParent$DtO
+{
+    public $propertyType$ $propertyName$ { get; set; }
+}
+public class $dtoName$DtO : $dtoParent$DtO, I$dtoName$DtO
+{
+    public $propertyType$ $propertyName$ { get; set; }
+}
+                ]]>
+			</Code>
+            <Declarations>
+                <Literal>
+                    <ID>dtoName</ID>
+                    <Default>Name</Default>
+                </Literal>
+                <Literal>
+                    <ID>dtoParent</ID>
+                    <Default>Parent</Default>
+                </Literal>
+                <Literal>
+                    <ID>propertyType</ID>
+                    <Default>string</Default>
+                </Literal>
+                <Literal>
+                    <ID>propertyName</ID>
+                    <Default>Property</Default>
+                </Literal>
+	        </Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

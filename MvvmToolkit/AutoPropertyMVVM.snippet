@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>AutoPropertyMVVVM</Title>
+			<Author>SSeelos</Author>
+			<Description>Requires MVVM Toolkit</Description>
+			<Shortcut>propMVVM</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+                private $type$ $_name$;
+                public $type$ $PublicName$
+                {
+                    get => $_name$;
+                    set => SetProperty(ref $_name$, value);
+                }
+                ]]>
+			</Code>
+            <Declarations>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>property type</ToolTip>
+                    <Default>string</Default>
+                </Literal>
+                <Literal>
+                    <ID>_name</ID>
+                    <ToolTip>private property name</ToolTip>
+                    <Default>_property</Default>
+                </Literal>
+                <Literal>
+                    <ID>PublicName</ID>
+                    <ToolTip>public property name</ToolTip>
+                    <Default>Property</Default>
+                </Literal>
+	        </Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

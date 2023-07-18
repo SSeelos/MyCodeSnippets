@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>DataTestMethod_DynamicData</Title>
+			<Shortcut>DataTestMethod_DynamicData_MSTest</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+[DataTestMethod]
+[DynamicData(nameof($methodname$_Data), DynamicDataSourceType.Method)]
+public void $methodname$($typeA$ $paramA$, $typeB$ $paramB$)
+{
+	
+}
+
+public static IEnumerable<$datatype$[]> $methodname$_Data()
+{
+	yield return new $datatype$[]{$dataA$, $dataB$};
+}
+				]]>
+			</Code>
+			<Imports>
+        <Import>
+          <Namespace>Microsoft.VisualStudio.TestTools.UnitTesting</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.Collections.Generic</Namespace>
+        </Import>
+			</Imports>
+			<Declarations>
+        <Literal>
+          <ID>typeA</ID>
+          <Default>object</Default>
+        </Literal>
+        <Literal>
+          <ID>paramA</ID>
+          <Default>param</Default>
+        </Literal>
+        <Literal>
+          <ID>typeB</ID>
+          <Default>object</Default>
+        </Literal>
+        <Literal>
+          <ID>paramB</ID>
+          <Default>param</Default>
+        </Literal>
+		<Literal>
+			<ID>methodname</ID>
+			<Default>DynamicDataTestMethod</Default>
+		</Literal>
+        <Literal>
+          <ID>datatype</ID>
+          <Default>object</Default>
+        </Literal>
+        <Literal>
+          <ID>dataA</ID>
+          <Default>"dataA"</Default>
+        </Literal>
+        <Literal>
+          <ID>dataB</ID>
+          <Default>"dataB"</Default>
+        </Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

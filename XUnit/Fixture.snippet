@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Fixture</Title>
+			<Author>SSeelos</Author>
+			<Description>fixture class holding some data</Description>
+			<Shortcut>Fixture_XUnit</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+public class $name$ : IDisposable
+{
+    public $datatype$ $dataname$ { get; private set; }
+    public $name$()
+    {
+        //this.$dataname$ =
+    }
+    public void Dispose()
+    {
+        $dataname$ = null;
+    }
+}
+				]]>
+			</Code>
+			<Imports>
+				<Import>
+					<Namespace>Xunit</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<Default>Fixture</Default>
+				</Literal>
+				<Literal>
+					<ID>datatype</ID>
+					<Default>object</Default>
+				</Literal>
+				<Literal>
+					<ID>dataname</ID>
+					<Default>Data</Default>
+				</Literal>
+		</Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

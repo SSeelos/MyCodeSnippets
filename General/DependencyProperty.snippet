@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>DependencyProperty</Title>
+			<Author>SSeelos</Author>
+			<Description>can be set through methods such as, styling, data binding, animation, and inheritance</Description>
+			<Shortcut>DependencyProperty_Windows</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+        public static readonly DependencyProperty $name$_DP =
+            DependencyProperty.Register(
+                nameof($name$), typeof($type$),
+                typeof($owner$),
+                new PropertyMetadata(null));
+
+        public $type$ $name$
+        {
+            get => ($type$)GetValue($name$_DP);
+            set => SetValue($name$_DP, value);
+        }
+                ]]>
+			</Code>
+            <Declarations>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>property type</ToolTip>
+                    <Default>string</Default>
+                </Literal>
+                <Literal>
+                    <ID>name</ID>
+                    <ToolTip>property name (of the wrapper property that will be used for data binding)</ToolTip>
+                    <Default>MyProperty</Default>
+                </Literal>
+                <Literal>
+                    <ID>owner</ID>
+                    <ToolTip>name of the owning class</ToolTip>
+                    <Default>MyOwnerType</Default>
+                </Literal>
+	        </Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

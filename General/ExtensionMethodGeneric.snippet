@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>ExtensionMethodT</Title>
+			<Author>SSeelos</Author>
+			<Description>generic extenison method for a given type</Description>
+			<Shortcut>ExtensionMethodT</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+			<![CDATA[
+public static $type$ $name$<T>(this $extensionType$ $subject$)
+where T : $T$
+{
+	
+}
+            ]]>
+			</Code>
+            <Declarations>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>return type</ToolTip>
+                    <Default>void</Default>
+                </Literal>
+                <Literal>
+                    <ID>name</ID>
+                    <ToolTip>method name</ToolTip>
+                    <Default>Extension</Default>
+                </Literal>
+                <Literal>
+                    <ID>extensionType</ID>
+                    <ToolTip>type to extend</ToolTip>
+                    <Default>object</Default>
+                </Literal>
+                <Literal>
+                    <ID>subject</ID>
+                    <ToolTip>extend object</ToolTip>
+                    <Default>subject</Default>
+                </Literal>
+                <Literal>
+                    <ID>T</ID>
+                    <ToolTip>generic type</ToolTip>
+                    <Default>object</Default>
+                </Literal>
+	        </Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Theory_MemberData</Title>
+			<Author>SSeelos</Author>
+			<Description>theory test method using member data</Description>
+			<Shortcut>Theory_MemberData_XUnit</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+[Theory]
+[MemberData(nameof($name$_Data))]
+public void $name$($typeA$ $paramA$, $typeB$ $paramB$)
+{
+  
+}
+
+public static IEnumerable<object[]> $name$_Data()
+{
+  yield return new object[]{$dataA$, $dataB$};
+}
+        ]]>
+			</Code>
+      <Imports>
+        <Import>
+          <Namespace>Xunit</Namespace>
+        </Import>
+      </Imports>
+            <Declarations>
+                <Literal>
+                    <ID>name</ID>
+                    <Default>Theory</Default>
+                </Literal>
+        <Literal>
+          <ID>typeA</ID>
+          <Default>object</Default>
+        </Literal>
+                <Literal>
+                    <ID>paramA</ID>
+                    <Default>paramA</Default>
+                </Literal>
+        <Literal>
+          <ID>typeB</ID>
+          <Default>object</Default>
+        </Literal>
+                <Literal>
+                    <ID>paramB</ID>
+                    <Default>paramB</Default>
+                </Literal>
+                <Literal>
+                    <ID>dataA</ID>
+                    <Default>"dataA"</Default>
+                </Literal>
+                <Literal>
+                    <ID>dataB</ID>
+                    <Default>"dataB"</Default>
+                </Literal>
+	        </Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

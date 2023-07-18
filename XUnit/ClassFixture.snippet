@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>ClassFixture</Title>
+			<Author>SSeelos</Author>
+			<Description>a shared instance of a fixture gets passed to the constructor</Description>
+			<Shortcut>ClassFixture_XUnit</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+    public class $name$ : IClassFixture<$fixturename$>
+    {
+        $fixturename$ $fixtureparam$;
+        public $name$($fixturename$ $fixtureparam$)
+        {
+            this.$fixtureparam$ = $fixtureparam$;
+        }
+	}
+				]]>
+			</Code>
+			<Imports>
+				<Import>
+					<Namespace>Xunit</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<Default>ClassFixture</Default>
+				</Literal>
+				<Literal>
+					<ID>fixturename</ID>
+					<Default>Fixture</Default>
+				</Literal>
+				<Literal>
+					<ID>fixtureparam</ID>
+					<Default>fixture</Default>
+				</Literal>
+		</Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
