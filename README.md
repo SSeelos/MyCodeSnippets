@@ -17,9 +17,19 @@ C:\Users\{USER}\Documents\{Visual Studio 2022}\Code Snippets\Visual C#\My Code S
 			<Shortcut>MyShortcut</Shortcut>
 		</Header>
 		<Snippet>
+	<Import>
+		<Namespace>MyNamespace</Namespace>
+	</Import>
 			<Code Language="CSharp">
-				<![CDATA[string mySnippet = "My Code Snippet";]]>
+				<![CDATA[string $MyID$ = "My Code Snippet";]]>
 			</Code>
+	<Declarations>
+		<Literal>
+			<ID>MyID</ID>
+			<ToolTip>MyToolTip</ToolTip>
+			<Default>MyDefault</Default>
+		</Literal>
+	</Declarations>
 		</Snippet>
 	</CodeSnippet>
 </CodeSnippets>
