@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>ExtensionProperties</Title>
+			<Author>SSeelos</Author>
+			<Description>extenison properties for a given type</Description>
+			<Shortcut>ExtensionProperties</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+			<![CDATA[
+        public class $name$
+        {
+            public $type$ $propertyname$ { get; set; }
+        }
+        private static readonly ConditionalWeakTable<$extensionType$, $name$> data
+            = new ConditionalWeakTable<$extensionType$, $name$>();
+			
+        public static $name$ $methodname$(this $extensionType$ $subject$)
+            => data.GetOrCreateValue($subject$);
+            ]]>
+			</Code>
+			<Imports>
+        <Import>
+          <Namespace>System.Runtime.CompilerServices</Namespace>
+        </Import>
+			</Imports>
+            <Declarations>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>property type</ToolTip>
+                    <Default>object</Default>
+                </Literal>
+                <Literal>
+                    <ID>propertyname</ID>
+                    <ToolTip>property name</ToolTip>
+                    <Default>Property</Default>
+                </Literal>
+                <Literal>
+                    <ID>name</ID>
+                    <ToolTip>properties name</ToolTip>
+                    <Default>ExtensionProperties</Default>
+                </Literal>
+                <Literal>
+                    <ID>extensionType</ID>
+                    <ToolTip>type to extend</ToolTip>
+                    <Default>object</Default>
+                </Literal>
+                <Literal>
+                    <ID>methodname</ID>
+                    <ToolTip>method to get the properties</ToolTip>
+                    <Default>GetExtension</Default>
+                </Literal>
+                <Literal>
+                    <ID>subject</ID>
+                    <ToolTip>extend object</ToolTip>
+                    <Default>subject</Default>
+                </Literal>
+	        </Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

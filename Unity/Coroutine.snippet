@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Coroutine</Title>
+			<Author>SSeelos</Author>
+			<Description>call StartCoroutine from a Monobehaviour</Description>
+			<Shortcut>Coroutine_Cr_Unity</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+<![CDATA[
+        IEnumerator $name$()
+        {
+            yield return $yieldInstruction$;
+			
+        }
+]]>
+			</Code>
+      <Imports>
+				<Import>
+					<Namespace>System.Collections</Namespace>
+				</Import>
+      </Imports>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>consider having a prefix "Cr_", since this is a special method</ToolTip>
+					<Default>Cr_Coroutine</Default>
+				</Literal>
+				<Literal>
+					<ID>yieldInstruction</ID>
+					<ToolTip>null to skip a frame</ToolTip>
+					<Default>new WaitForSecondsRealtime(1)</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>CustomAction</Title>
+			<Author>SSeelos</Author>
+			<Description>custom action can be added to the project by defining a ManagedAction</Description>
+			<Shortcut>CustomAction_WixSharp</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+[CustomAction]
+public static ActionResult $name$(Session session)
+{
+	session.Log("Begin $name$");
+	
+	return ActionResult.Success;
+}
+        ]]>
+			</Code>
+      <Imports>
+				<Import>
+					<Namespace>WixSharp</Namespace>
+				</Import>
+      </Imports>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>custom action name</ToolTip>
+					<Default>CustomAction</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

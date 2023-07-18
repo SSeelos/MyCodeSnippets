@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>CollectionDefinition</Title>
+			<Author>SSeelos</Author>
+			<Description>(will never be created)</Description>
+			<Shortcut>CollectionDefinition_XUnit</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+[CollectionDefinition(nameof($name$))]
+public class $name$ : $ifixture$<$fixturename$>{ }
+				]]>
+			</Code>
+			<Imports>
+				<Import>
+					<Namespace>Xunit</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<Default>CollectionFixture</Default>
+				</Literal>
+				<Literal>
+					<ID>ifixture</ID>
+					<Description>apply [CollectionDefinition] and all the ICollectionFixture interfaces OR
+					derive from IClassFixture to have the entire collection behave as if they have the interface applied</Description>
+					<Default>ICollectionFixture</Default>
+				</Literal>
+				<Literal>
+					<ID>fixturename</ID>
+					<Default>Fixture</Default>
+				</Literal>
+		</Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

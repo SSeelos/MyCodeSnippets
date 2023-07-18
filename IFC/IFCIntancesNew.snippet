@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>NewInstance</Title>
+			<Author>SSeelos</Author>
+			<Shortcut>IfcModelInstancesNew</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+                var $variable$ = Model.Instances.New<$type$>()
+                ]]>
+			</Code>
+            <Declarations>
+                <Literal>
+                    <ID>variable</ID>
+                    <Default>instance</Default>
+                </Literal>
+                <Literal>
+                    <ID>type</ID>
+                    <Default>T</Default>
+                </Literal>
+	        </Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

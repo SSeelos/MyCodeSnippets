@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>ShouldThrow</Title>
+			<Description>action that should throw an exception</Description>
+			<Shortcut>Action_ShouldThrowException_FluentAssertions</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+Action $name$ = () => $action$;
+$name$.Should().Throw<$exception$>().And
+	.Message.Should().Be("$message$");
+				]]>
+			</Code>
+      <Imports>
+				<Import>
+					<Namespace>FluentAssertions.Execution</Namespace>
+				</Import>
+      </Imports>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>action name</ToolTip>
+					<Default>throwing</Default>
+				</Literal>
+				<Literal>
+					<ID>action</ID>
+					<ToolTip>throwing action</ToolTip>
+					<Default>{ }</Default>
+				</Literal>
+				<Literal>
+					<ID>exception</ID>
+					<ToolTip>exception type</ToolTip>
+					<Default>Exception</Default>
+				</Literal>
+				<Literal>
+					<ID>message</ID>
+					<ToolTip>excpetion message</ToolTip>
+					<Default>message</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Interface</Title>
+			<Author>SSeelos</Author>
+			<Shortcut>Interface_Method</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+    public interface I$name$
+    {
+        $type$ $methodname$();
+    }
+                ]]>
+			</Code>
+            <Declarations>
+                <Literal>
+                    <ID>name</ID>
+                    <ToolTip>interface name</ToolTip>
+                    <Default>Interactable</Default>
+                </Literal>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>return type</ToolTip>
+                    <Default>void</Default>
+                </Literal>
+                <Literal>
+                    <ID>methodname</ID>
+                    <ToolTip>method name</ToolTip>
+                    <Default>Interact</Default>
+                </Literal>
+	        </Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

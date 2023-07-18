@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>IFCSchemaElif</Title>
+			<Author>SSeelos</Author>
+			<Description>ifc schema configuration</Description>
+			<Shortcut>#IFCSchemaElif</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+                #if $schema1$
+				#elif $schema2$
+				#endif
+                ]]>
+			</Code>
+            <Declarations>
+                <Literal>
+                    <ID>schema1</ID>
+                    <Default>IFC2x3</Default>
+                </Literal>
+                <Literal>
+                    <ID>schema2</ID>
+                    <Default>IFC4</Default>
+                </Literal>
+	        </Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
