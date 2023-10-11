@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>OverloadOperator</Title>
+			<Author>SSeelos</Author>
+			<Description>overload a predefined C# operator for a user-defined type</Description>
+			<Shortcut>OverloadOperator</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+public static $return$ operator $operator$($type$ $paramA$, $other$ $paramB$)
+    => new $return$($paramA$.$propA$ $operator$ $paramB$.$propB$);
+
+                ]]>
+			</Code>
+            <Declarations>
+                <Literal>
+                    <ID>return</ID>
+                    <ToolTip>return type</ToolTip>
+                    <Default>returnType</Default>
+                </Literal>
+                <Literal>
+                    <ID>operator</ID>
+                    <ToolTip>operator to overload</ToolTip>
+                    <Default>+</Default>
+                </Literal>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>type to overload</ToolTip>
+                    <Default>type</Default>
+                </Literal>
+                <Literal>
+                    <ID>paramA</ID>
+                    <ToolTip>operation paramA</ToolTip>
+                    <Default>a</Default>
+                </Literal>
+                <Literal>
+                    <ID>propA</ID>
+                    <ToolTip>paramA property</ToolTip>
+                    <Default>X</Default>
+                </Literal>
+                <Literal>
+                    <ID>other</ID>
+                    <ToolTip>other type</ToolTip>
+                    <Default>other</Default>
+                </Literal>
+                <Literal>
+                    <ID>paramB</ID>
+                    <ToolTip>operation paramB</ToolTip>
+                    <Default>b</Default>
+                </Literal>
+                <Literal>
+                    <ID>propB</ID>
+                    <ToolTip>paramB property</ToolTip>
+                    <Default>X</Default>
+                </Literal>
+	        </Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
