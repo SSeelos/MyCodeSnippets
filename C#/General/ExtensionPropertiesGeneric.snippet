@@ -2,23 +2,37 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>ExtensionProperties</Title>
+			<Title>ExtensionPropertiesT</Title>
 			<Author>SSeelos</Author>
-			<Description>extenison properties for a given type</Description>
-			<Shortcut>ExtensionProperties</Shortcut>
+			<Description>extenison properties for a given type, whith reference to the instance</Description>
+			<Shortcut>ExtensionPropertiesT</Shortcut>
 		</Header>
 		<Snippet>
 			<Code Language="CSharp">
 			<![CDATA[
-public class $name$
+public class $name$<T> where T : $extensionType$
 {
-    public $type$ $propertyname$ { get; set; }
+    T $instance$;
+    public $name$(T $instance$)
+    {
+        this.$instance$ = $instance$;
+    }
+    public object Property { get; set; }
 }
-private static readonly ConditionalWeakTable<$extensionType$, $name$> data
-    = new ConditionalWeakTable<$extensionType$, $name$>();
-	
-public static $name$ $methodname$(this $extensionType$ $subject$)
-    => data.GetOrCreateValue($subject$);
+private static readonly ConditionalWeakTable<$extensionType$, $name$<$extensionType$>> data
+    = new ConditionalWeakTable<$extensionType$, $name$<$extensionType$>>();
+
+public static $name$<$extensionType$> Get$extensionType$Extension(this $extensionType$ $instance$)
+{
+    if (data.TryGetValue($instance$,
+        out $name$<$extensionType$> value))
+        return value;
+
+    value = new $name$<$extensionType$>($instance$);
+    data.Add($instance$, value);
+
+    return value;
+}
             ]]>
 			</Code>
 			<Imports>
@@ -28,19 +42,24 @@ public static $name$ $methodname$(this $extensionType$ $subject$)
 			</Imports>
             <Declarations>
                 <Literal>
-                    <ID>name</ID>
-                    <ToolTip>properties name</ToolTip>
-                    <Default>ExtensionProperties</Default>
-                </Literal>
-                <Literal>
                     <ID>type</ID>
                     <ToolTip>property type</ToolTip>
                     <Default>object</Default>
                 </Literal>
                 <Literal>
+                    <ID>instance</ID>
+                    <ToolTip>instance variable</ToolTip>
+                    <Default>instance</Default>
+                </Literal>
+                <Literal>
                     <ID>propertyname</ID>
                     <ToolTip>property name</ToolTip>
                     <Default>Property</Default>
+                </Literal>
+                <Literal>
+                    <ID>name</ID>
+                    <ToolTip>properties name</ToolTip>
+                    <Default>ExtensionProperties</Default>
                 </Literal>
                 <Literal>
                     <ID>extensionType</ID>
@@ -51,11 +70,6 @@ public static $name$ $methodname$(this $extensionType$ $subject$)
                     <ID>methodname</ID>
                     <ToolTip>method to get the properties</ToolTip>
                     <Default>GetExtension</Default>
-                </Literal>
-                <Literal>
-                    <ID>subject</ID>
-                    <ToolTip>extend object</ToolTip>
-                    <Default>subject</Default>
                 </Literal>
 	        </Declarations>
 		</Snippet>
