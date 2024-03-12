@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>RelayCommand_Property</Title>
+			<Author>SSeelos</Author>
+			<Description>command property that can be bound to a view (Requires MVVM Toolkit)</Description>
+			<Shortcut>RelayCommand_Property_MVVM</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+			<![CDATA[
+ICommand $name$;
+public ICommand $name$ => $name$
+	?? ($name$ = new $type$(()
+		=> { }));
+			]]>
+			</Code>
+      <Imports>
+				<Import>
+					<Namespace>CommunityToolkit.Mvvm.Input</Namespace>
+				</Import>
+      </Imports>
+            <Declarations>
+                <Literal>
+                    <ID>name</ID>
+                    <ToolTip>command name</ToolTip>
+                    <Default>Command</Default>
+                </Literal>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>command type</ToolTip>
+                    <Default>RelayCommand</Default>
+                </Literal>
+                <Literal>
+                    <ID>subject</ID>
+                    <ToolTip>extend object</ToolTip>
+                    <Default>subject</Default>
+                </Literal>
+	        </Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
