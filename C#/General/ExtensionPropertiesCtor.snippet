@@ -2,10 +2,10 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>ExtensionProperties</Title>
+			<Title>ExtensionPropertiesCtor</Title>
 			<Author>SSeelos</Author>
-			<Description>extenison properties for a given type</Description>
-			<Shortcut>ExtensionProperties</Shortcut>
+			<Description>extenison properties for a given type, with constructor</Description>
+			<Shortcut>ExtensionPropertiesCtor</Shortcut>
 		</Header>
 		<Snippet>
 			<Code Language="CSharp">
@@ -15,9 +15,17 @@ public class $name$
     public $type$ $propertyname$ { get; set; }
 }
 private static readonly ConditionalWeakTable<$extensionType$, $name$> data = [];
-	
 public static $name$ $methodname$(this $extensionType$ $subject$)
-    => data.GetOrCreateValue($subject$);
+{
+    if (data.TryGetValue($subject$,
+        out $name$ value))
+        return value;
+
+    value = new $name$($subject$);
+    data.Add($subject$, value);
+
+    return value;
+}
             ]]>
 			</Code>
 			<Imports>
@@ -35,6 +43,11 @@ public static $name$ $methodname$(this $extensionType$ $subject$)
                     <ID>type</ID>
                     <ToolTip>property type</ToolTip>
                     <Default>object</Default>
+                </Literal>
+                <Literal>
+                    <ID>subject</ID>
+                    <ToolTip>extended object</ToolTip>
+                    <Default>subject</Default>
                 </Literal>
                 <Literal>
                     <ID>propertyname</ID>
