@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Flags</Title>
+			<Author>SSeelos</Author>
+			<Description>flags enum</Description>
+			<Shortcut>Flags</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+[Flags]
+public enum $name$
+{
+    None = 0,
+    $flagA$ = 1 << 0,
+    $flagB$ = 1 << 1,
+}
+                ]]>
+			</Code>
+            <Declarations>
+                <Literal>
+                    <ID>name</ID>
+                    <ToolTip>enum name</ToolTip>
+                    <Default>FlagsEn</Default>
+                </Literal>
+                <Literal>
+                    <ID>flagA</ID>
+                    <Default>FlagA</Default>
+                </Literal>
+                <Literal>
+                    <ID>flagB</ID>
+                    <Default>FlagB</Default>
+                </Literal>
+	        </Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
