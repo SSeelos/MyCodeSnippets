@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>AsyncMethod</Title>
+			<Author>SSeelos</Author>
+			<Description>async method</Description>
+			<Shortcut>async_method</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+public static async $type$ $name$()
+{
+    $await$
+}
+                ]]>
+			</Code>
+            <Declarations>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>return type</ToolTip>
+                    <Default>Task</Default>
+                </Literal>
+                <Literal>
+                    <ID>name</ID>
+                    <ToolTip>method name</ToolTip>
+                    <Default>RunAsync</Default>
+                </Literal>
+                <Literal>
+                    <ID>await</ID>
+                    <Default>await</Default>
+                </Literal>
+	        </Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
