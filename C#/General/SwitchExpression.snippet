@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>SwitchExpression</Title>
+			<Author>SSeelos</Author>
+			<Description>switch expression</Description>
+			<Shortcut>SwitchExpression</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+$type$ switch
+{
+    $case$ => $value$,
+    _ => $default$
+};
+                ]]>
+			</Code>
+            <Declarations>
+                <Literal>
+                    <ID>type</ID>
+                    <Default>subject</Default>
+                </Literal>
+                <Literal>
+                    <ID>case</ID>
+                    <Default>caseA</Default>
+                </Literal>
+                <Literal>
+                    <ID>value</ID>
+                    <Default>valueA</Default>
+                </Literal>
+                <Literal>
+                    <ID>default</ID>
+                    <Default>defaultValue</Default>
+                </Literal>
+	        </Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
